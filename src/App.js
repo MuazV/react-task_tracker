@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import Header from './components/Header.js'
 import './App.css';
 
 function App() {
+  const [tasks, SetTasks] = useState([
+    {
+      id:1,
+      text : "electricity bill",
+      day : "Feb 17th at 01.00am"
+    },
+    {
+      id:2,
+      text : "Birthday",
+      day : "Sept 15th 8.00pm"
+    }
+  ])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
     </div>
   );
 }
