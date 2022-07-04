@@ -1,23 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import Header from './components/Header.js'
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Header from "./components/Header.js";
+import Tasks from "./components/Tasks.js";
+import AddTask from "./components/AddTask.js";
 
 function App() {
-  const [tasks, SetTasks] = useState([
+  const [showAddTask, setShowAddTask] = useState(false);
+  const [tasks, setTasks] = useState([
     {
-      id:1,
-      text : "electricity bill",
-      day : "Feb 17th at 01.00am"
+      id: 1,
+      text: "Doctors Appointment",
+      day: "Feb 5th at 2:30pm",
+      reminder: true,
     },
     {
-      id:2,
-      text : "Birthday",
-      day : "Sept 15th 8.00pm"
-    }
-  ])
+      id: 2,
+      text: "Meeting at School",
+      day: "Feb 6th at 1:30",
+      reminder: true,
+    },
+    {
+      id: 3,
+      text: "Food Shopping",
+      day: "Feb 5th at 2:30pm",
+      reminder: false,
+    },
+  ]);
+
+  //Add Task
+  const addTask = (task) => {
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const newTask = { id, ...task };
+    setTasks([...tasks, newTask]);
+  };
+
+  // Delete Task
+  const deleteTask = (id) => {
+    console.log("object", id);
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+
   return (
-    <div className="App">
-      <Header/>
+    <div className="container">
+      <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+      {showAddTask && <AddTask onAdd={addTask} />}
+      {tasks.length > 0 ? (
+        <Tasks tasks={tasks} onDelete={deleteTask} />
+      ) : (
+        "There is no Tasks To Show"
+      )}
     </div>
   );
 }

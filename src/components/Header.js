@@ -1,17 +1,25 @@
-import React, { useState } from "react";
-const Header = () => {
-  const [btnToggle, setBtnToggle] = useState(true);
+import PropTypes from "prop-types";
+import Button from "./Button.js";
 
-
+const Header = ({ title, onAdd, showAdd }) => {
   return (
-    <div>
-      <h2>Task Tracker</h2>
-      <button style={{ backgroundColor: "red" }} onClick={() => setBtnToggle(!btnToggle)}>
-        {btnToggle ? "Close Add Task Bar" : "Show Add Task Bar"}
-        
-      </button>
-    </div>
+    <header className="header">
+      <h1>{title}</h1>
+      <Button
+        color={showAdd ? "red" : "green"}
+        text={showAdd ? "Close" : "Add"}
+        onClick={onAdd}
+      />
+    </header>
   );
+};
+
+Header.defaultProps = {
+  title: "Task Tracker",
+};
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default Header;
