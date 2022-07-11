@@ -6,4 +6,4 @@ useState, defaultProp, React-icons, Map are the methods I generally use in this 
 [Click Here To See All Page](https://task-tracker2022.netlify.app/)
 
 ***
-![]()
+![](https://github.com/MuazV/react-task_tracker/blob/master/src/assets/Animation.gif)
