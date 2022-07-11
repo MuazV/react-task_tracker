@@ -3,8 +3,7 @@ The main purpose of this project was to capture data from forms and use this dat
 + useState, 
 + defaultProp, 
 + React-icons, 
-+ Map,
-are the methods I generally use in this project.
++ Map,    are the methods I generally use in this project.
 ***
 
 [Click Here To See All Page](https://task-tracker2022.netlify.app/)
