@@ -6,7 +6,7 @@ const Task = ({ task, onDelete }) => {
   return (
     <div className={done ? "task" : "task ciz"} onDoubleClick={() => setDone(!done)}>
       <h3>
-        {task.text} <FaTimes style={{ color: "red", cursor: "pointer" }} onClick={() => onDelete(task.id)} />
+        {task.text} <FaTimes style={{ color: "#D92323", cursor: "pointer" }} onClick={() => onDelete(task.id)} />
       </h3>
       <p>{task.day}</p>
     </div>

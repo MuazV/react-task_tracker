@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+/* 
+:root{
+color1: #40030E; 
+color2: #F2C572; 
+color3: #F29057; 
+color4: #F2622E; 
+color5: #D92323; 
+} */
 
 * {
   box-sizing: border-box;
@@ -15,7 +23,7 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 1px solid #40030E;
   padding: 30px;
   border-radius: 5px;
 }
@@ -29,8 +37,8 @@ body {
 
 .btn {
   display: inline-block;
-  background: #000;
-  color: #fff;
+  background: #D92323;
+  color: #40030E;
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -55,14 +63,14 @@ body {
 }
 
 .task {
-  background: #f4f4f4;
+  background: #F2C572;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
 }
 
 .ciz {
-  border-left: 5px solid green;
+  border-left: 5px solid #83A603;
   text-decoration: line-through;
 }
 
@@ -90,7 +98,11 @@ body {
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
+  background-color: #F2C572;
+  border: none;
+  outline: none;
 }
+
 
 .form-control-check {
   display: flex;
